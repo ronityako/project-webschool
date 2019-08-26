@@ -43,17 +43,19 @@ router.post('/', function(req, res, next){
   next();
 },(req,res,next) => res.status(200))
 
-router.put('/', function(req, res, next){
-  StudentModel.findOneAndUpdate({id:req.body.id}, {$set: req.body}, (err, doc)=>{
+router.put('/',  function(req, res, next){
+ StudentModel.findOneAndUpdate({id:req.body.id}, {$set: req.body},{new: true}, (err, doc) => {
     if(err){
       console.log(err);
     }
     else{
+      res.status(200).send(doc);
       console.log(`Student was updated to: ${doc}`);
     }
-  })
-  next();
-},(req,res,next) => res.status(200) )
+  });
+
+
+},() => console.log('put request'))
 
 router.delete('/', function(req, res, next){
   StudentModel.findOneAndDelete({id: req.body.id}, (err)=>{
