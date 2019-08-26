@@ -22,7 +22,7 @@ export class UpdateStudentComponent implements OnInit {
     if(valid){
       this.dalSrv.updateDB('http://localhost:3000/students', this.chosenStudent).subscribe(data=>{
         console.log(data);
-        this.studentClosed.emit(true);});
+        this.studentClosed.emit(data);});
       
     }
   }
@@ -39,9 +39,9 @@ export class UpdateStudentComponent implements OnInit {
   }
 
   delStudent(){
-    this.dalSrv.deleteFromDB('http://localhost:3000/students', 'id', this.chosenStudent.id).subscribe(
-      data=>{console.log(data);
-      this.studentClosed.emit(true);
+    this.dalSrv.deleteFromDB(`http://localhost:3000/students/?id=${this.chosenStudent.id}`).subscribe(
+      data=>{console.log(`in delStudent: ${data}`);
+      this.studentClosed.emit(data);
       });
   }
   

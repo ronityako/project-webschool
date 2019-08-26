@@ -13,7 +13,8 @@ export class StudentsTableComponent implements OnInit {
   currentStudents = 1;
   @Output() newId = new EventEmitter();
 
-  chosen = false;
+  chosen:number = 0;
+
   chosenStudent:any = {id:0,
     fullName: '', 
     phone: '',
@@ -25,7 +26,7 @@ export class StudentsTableComponent implements OnInit {
     payments:[] };
 
   copyStudent(student){
-    this.chosen = true;
+    this.chosen = student.id;
     console.log(`student: ${student.phone}`);
     console.log(`chosenStudent: ${this.chosenStudent}`);
     this.chosenStudent.id = student.id, 
@@ -63,19 +64,36 @@ export class StudentsTableComponent implements OnInit {
     }
   }
 
-  closeUpdate(update:boolean){
-    this.chosen = false;
-    if(update){
+  closeUpdate(update:any){
+    if(!update){
+      this.chosen = 0;
+    }
+    else if(Object.entries(update).length == 0){ // empty object => delete
+      let index = this.students.map( x => {return x.id} ).indexOf(this.chosen);
+      this.students.splice(index, 1);
+      let length = 8;
+      if(this.students.length < 8){
+        length = this.students.length;
+      }
+      for(let i = 0; i < length; i++){
+        this.studentsInTable[i] = this.students[i];
+      }
+    }
+    else if(update){ // updated object
       console.log('in update');
-      this.dalSrv.getFromDB('http://localhost:3000/students').subscribe(data => {
-      this.students = data;
-      console.log(this.students);
+      // this.dalSrv.getFromDB('http://localhost:3000/students').subscribe(data => {
+      // this.students = data;
+      console.log(update);
+      let index = this.students.map( x => {return x.id} ).indexOf(this.chosen);
+      this.students[index] = update;
+      console.log(this.students[index]);
       for(let i = 0; i < 8; i++){
           this.studentsInTable[i] = this.students[i];
       }
       console.log(this.students);
-    });
+    // });
     }
+    this.chosen = 0;
   }
   constructor( private dalSrv:DALService ) { }
 

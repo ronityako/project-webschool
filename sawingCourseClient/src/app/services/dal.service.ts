@@ -23,9 +23,8 @@ export class DALService {
     return this.http.put(url, rec);
   }
 
-  deleteFromDB(url:string, key, val){
-    let httpParams = new HttpParams().set(key, val);    
-    let options = { params: httpParams };
-    return this.http.delete(url, options);
+  deleteFromDB(url:string){
+  
+    return this.http.delete(url);
   }
 }

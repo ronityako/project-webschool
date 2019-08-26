@@ -1,6 +1,6 @@
 <div id="student">
 
-    <span id="xButton" (click)="studentClosed.emit(false)"><fa name="window-close"></fa></span>
+    <span id="xButton" (click)="studentClosed.emit(null)"><fa name="window-close"></fa></span>
     <form #f="ngForm" (ngSubmit)="submitForm(f.valid)">
         <div id="fullName">
             <h2 *ngIf="chosenStudent.id!=0">{{chosenStudent.fullName}}</h2>
@@ -66,7 +66,7 @@
         </div>
         <div id="buttons">
             <button [disabled]="!f.valid" type="submit" class="btn btn-primary btn-sm">שמור שינויים</button>
-            <button type="button" class="btn btn-secondary btn-sm" (click)="studentClosed.emit(false)">סגור</button>
+            <button type="button" class="btn btn-secondary btn-sm" (click)="studentClosed.emit(null)">סגור</button>
             <button type="button" class="btn btn-secondary btn-sm" (click)="delStudent()">מחק תלמידה</button>
         </div>
     </form>
