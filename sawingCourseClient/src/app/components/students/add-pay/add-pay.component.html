@@ -1,0 +1,19 @@
+<div id="addPay">
+    <label>תאריך:
+        <input type="text" [(ngModel)]="payment.date"/>
+    </label>
+    <label>סכום:
+        <input type="number" [(ngModel)]="payment.amount"/> 
+    </label>
+    <label>אמצעי תשלום: 
+        <select  [(ngModel)]="payment.way"> 
+            <option>מזומן</option>
+            <option>צ'ק</option>
+            <option>כרטיס אשראי</option>
+        </select>
+    </label>
+    <div id="btnArea">
+        <button type="submit" class="btn btn-primary btn-sm" (click)="newPayment()">הוסף תשלום</button>
+        <button type="button" class="btn btn-secondary btn-sm" (click)="closeWin()">סגור</button>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+#sawing_prod{
+    background-color: #e7ecec;
+    min-height: 660px;
+}
+.category{
+    margin: 10px;
+    border: 1px solid #a4b7b7;
+    padding: 36px 10px;
+    border-radius: 10px;
+}
+.category img{
+    width: 225px;
+    height: 225px;
+    margin-bottom: 30px;
+}
+
+.category h3{
+    color: black;
+}
+
+.category:hover{
+    text-decoration: none;
+}
+
+.category_name{
+    background-color: #88ad72;
+    width: 225px;
+    padding: 10px 0;
+}

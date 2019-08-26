@@ -1,0 +1,30 @@
+<div id="sawing_prod" class="center">
+    <h1 class="animated fadeInRight moving_header">מוצרי בסיס לתלמידה</h1>
+    
+    <div id="cart" (click)="showCartProducts = !showCartProducts"><fa name="shopping-cart" size="3x"></fa></div>
+    <app-cart-products *ngIf="showCartProducts" [products]="productsToCart"></app-cart-products>
+
+    <section class="flex">
+        <div *ngFor="let prod of products; let i = index;" class="product">
+            <img [src]="'http://localhost:3000/' + prod.picture" />
+            <div>
+                <p class="product_name">{{prod.name}}</p>
+                <h5>{{prod.price}}</h5>
+                <div *ngIf="prod.colors.length != 0">
+                    <button (click)="updateColor(i)">צבע</button>
+                    <app-select-color *ngIf="showColorsList[i]" [colorsList]="prod.colors" (selectedColor)="showSelectedColor($event, i)"></app-select-color>
+                    <div *ngIf="showColor[i]">
+                        <div id="color" [ngStyle]="{backgroundColor: color[i].colorHex}"></div>
+                        <span>{{color[i].colorName}}</span>
+                    </div>
+                </div>
+                
+                <button [disabled]="prod.colors.length != 0 && !showColor[i]" (click)="addToCart(prod, i)" type="button" class="btn btn-secondary btn-sm">הוסף לסל</button>
+            </div>
+        </div>
+    </section>
+    <div class="btn-area">
+        <a routerLink="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">תפריט ראשי</a>
+        <a routerLink="/products-categories" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">סדקית ראשי</a>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+.table-dark{
+    opacity: 0.7;   
+}
+.tableLine{
+    cursor: pointer;
+}
+.tableHeader{
+    color: #0062cc;
+}
+.arrowBtn{
+    background-color: #0062cc;
+    float: right;
+}

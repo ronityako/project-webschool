@@ -1,0 +1,6 @@
+<div id="colorsList">
+    <div *ngFor="let color of colorsList">
+        <div id="color" [ngStyle]="{backgroundColor: color.colorHex}" (click)=colorSelected(color.colorId)></div>
+        <span>{{color.colorName}}</span>
+    </div>
+</div>

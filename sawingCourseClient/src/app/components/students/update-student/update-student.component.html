@@ -1,0 +1,74 @@
+<div id="student">
+
+    <span id="xButton" (click)="studentClosed.emit(false)"><fa name="window-close"></fa></span>
+    <form #f="ngForm" (ngSubmit)="submitForm(f.valid)">
+        <div id="fullName">
+            <h2 *ngIf="chosenStudent.id!=0">{{chosenStudent.fullName}}</h2>
+            <!-- <input *ngIf="chosenStudent.id==0" id="name" #fName="ngModel" [(ngModel)]="chosenStudent.fullName" name="fName" type="text"/> -->
+            <!-- <span class="error" *ngIf="chosenStudent.id==0 && !fName.valid && fName.errors.required && fName.dirty">חובה להזין שם</span> -->
+        </div>
+        <div class="details">
+            <div id="phones">
+                <label>טלפון בבית:
+                    <input required #phone="ngModel" [(ngModel)]="chosenStudent.phone" name="phone" type="text"/>
+                </label>
+                <span class="error" *ngIf="!phone.valid && phone.errors.required && phone.dirty">חובה להזין טלפון בבית</span>
+                <label>סלולרי:
+                    <input [(ngModel)]="chosenStudent.mobile" name="mobile" type="text"/>
+                </label>
+            </div>
+            <div id="moreDetails">
+                <label>בי"ס: 
+                    <input [(ngModel)]="chosenStudent.school" name="school" type="text" id="school"/>
+                </label>
+                <label>כיתה: 
+                    <input [(ngModel)]="chosenStudent.class" name="class" type="text" id="cl"/>
+                </label>
+                <label>קבוצה: 
+                    <select [(ngModel)]="chosenStudent.group" name="group"> 
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </label>
+                <p *ngIf="chosenStudent.id!=0">תאריך תחילת לימודים: {{chosenStudent.startDate}}</p>
+                <!-- <label *ngIf="chosenStudent.id==0">תאריך תחילת לימודים:
+                    <input #startDate="ngModel" [(ngModel)]="chosenStudent.startingDate" name="startingDate" type="text" id="startingDate"/>
+                </label> -->
+                <!-- <span class="error" *ngIf="chosenStudent.id==0&&!startDate.valid && startDate.errors.required && startDate.dirty">חובה להזין תאריך תחילת לימודים</span> -->
+            </div>
+            <div id="tblArea">
+                
+                <p>תשלומים:</p>
+                <table>
+                    <tr>
+                        <th>תאריך</th>
+                        <th>סכום</th>
+                        <th>אמצעי תשלום</th>
+                    </tr>
+                    <tr *ngFor="let pay of paymentsInTable">
+                        <td>{{pay.date}}</td>
+                        <td>{{pay.amount}}</td>
+                        <td>{{pay.way}}</td>
+                    </tr>
+                </table>
+                <div id="arrowBtn">
+                    <button (click)="previous()"><fa name="angle-double-up"></fa></button>
+                    <button (click)="next()"><fa name="angle-double-down"></fa></button>
+                </div>
+
+                <button type="button" class="btn btn-secondary btn-sm btn-pay" (click)="paymentWin=true">הוסף תשלום</button>
+                <app-add-pay (newPay)="addToTable($event)" *ngIf="paymentWin"></app-add-pay>
+                <span class="note" *ngIf="diff > 0">זכות: {{diff}}</span>
+                <span class="note" *ngIf="diff < 0">חוב: {{diff + diff * -2}}</span>
+            </div>
+        </div>
+        <div id="buttons">
+            <button [disabled]="!f.valid" type="submit" class="btn btn-primary btn-sm">שמור שינויים</button>
+            <button type="button" class="btn btn-secondary btn-sm" (click)="studentClosed.emit(false)">סגור</button>
+            <button type="button" class="btn btn-secondary btn-sm" (click)="delStudent()">מחק תלמידה</button>
+        </div>
+    </form>
+</div>
+    

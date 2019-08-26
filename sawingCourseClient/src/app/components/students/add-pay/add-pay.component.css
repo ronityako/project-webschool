@@ -1,0 +1,21 @@
+#addPay{
+    background-color: #75bfda;
+    border: 1px black solid;
+    border-radius: 5px;
+    position: absolute;
+    left: 350px;
+    top: 100px;
+    padding: 10px;
+    width:200px;
+}
+input{
+    width: 70px;
+    background-color: #bedce7;
+}
+select{
+    background-color: #bedce7;
+}
+#btnArea{
+    padding-top: 10px;
+    border-top: 1px #a29f9f solid;
+}

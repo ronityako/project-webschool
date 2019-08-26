@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/font-awesome/css/font-awesome.css";
+body {
+    margin: 0;
+    direction: rtl;
+}
+.center{
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+.moving_header{
+    font-size: 60px;
+    color: #88ad72;
+    padding: 20px;
+    margin: 0; 
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.btn-area{
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+}
+

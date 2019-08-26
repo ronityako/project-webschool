@@ -1,0 +1,20 @@
+<div id="cartProducts">
+    <h3 *ngIf="products.length==0">אין מוצרים בעגלה</h3>
+    <div *ngFor="let prod of products" class="cartProduct">
+        <img [src]="'http://localhost:3000/' + prod.picture"/>
+        <span class="name">{{prod.name}}</span>
+        <div class="amount">
+            <button (click)="decreaseAmount(prod)">-</button>
+            <input type="number" min="1" [value]="prod.amount"/>
+            <button (click)="increaseAmount(prod)">+</button>
+        </div>
+        <div class="colorArea" *ngIf="prod.color" >
+            <span>צבע: </span>
+            <div class="color" [ngStyle]="{backgroundColor: prod.color.colorHex}"></div>
+            <span>{{prod.color.colorName}}</span>
+        </div>
+        <span class="price">{{prod.price}}</span>
+        <span class="xButton"><fa name="window-close"></fa></span>
+        
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<table class="table table-striped table-dark">
+        <thead>
+            <tr class="tableHeader">
+                <th scope="col">שם</th>
+                <th scope="col">טלפון בבית</th>
+                <th scope="col">פלאפון</th>
+                <th scope="col">בי"ס</th>
+                <th scope="col">כיתה</th>
+                <th scope="col">קבוצה</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="tableLine" *ngFor="let student of studentsInTable" (click)="copyStudent(student)">
+                <td scope="row">{{student.fullName}}</td>
+                <td>{{student.phone}}</td>
+                <td>{{student.mobile}}</td>
+                <td>{{student.school}}</td>
+                <td>{{student.class}}</td>
+                <td>{{student.group}}</td>
+            </tr>
+        </tbody>
+</table>
+
+<button class="arrowBtn" (click)="previous()"><fa name="angle-double-up"></fa></button>
+<button class="arrowBtn" (click)="next()"><fa name="angle-double-down"></fa></button>
+
+<app-update-student [chosenStudent]="chosenStudent" *ngIf="chosen" (studentClosed)="closeUpdate($event)"></app-update-student>
+

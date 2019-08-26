@@ -1,0 +1,46 @@
+#sawing_prod{
+    background-color: #e7ecec;
+    min-height: 660px;
+}
+
+.product{
+    margin: 10px;
+    border: 1px solid #a4b7b7;
+    padding: 36px 10px;
+    border-radius: 10px;
+    position: relative;
+}
+.product img{
+    width: 225px;
+    height: 225px;
+    margin-bottom: 30px;
+}
+.product_name{
+    background-color: #88ad72;
+    width: 140px;
+    padding:10px;
+    margin-left:auto;
+    margin-right: auto;
+}
+.btn-sm{
+    margin: 10px;
+}
+#color{
+    width: 20px;
+    height: 15px;
+    border: 1px black solid;
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+#cart{
+    color:white;
+    background-color: #0062cc;
+    height: 60px;
+    width: 80px;
+    position: fixed;
+    left: 0;
+    top: 20px;
+    z-index: 2;
+    cursor: pointer;
+}

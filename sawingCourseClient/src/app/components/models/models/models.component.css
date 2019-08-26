@@ -1,0 +1,17 @@
+#models{
+    background-color: #e7ecec;
+    min-height: 660px;
+}
+
+.model{
+    margin: 10px;
+    border: 1px solid #a4b7b7;
+    padding: 36px 10px 10px 10px;
+    border-radius: 10px;
+}
+
+.model img{
+    width: 225px;
+    height: 225px;
+    margin-bottom: 30px;
+}

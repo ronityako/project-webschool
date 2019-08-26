@@ -1,0 +1,12 @@
+<div id="students" class="center">
+    <h1 class="animated fadeInRight delay-1s infinity moving_header">תלמידות</h1>
+
+    <app-students-table (newId)="newId = $event"></app-students-table>
+
+    <app-new-student *ngIf="addStudent" (studentClosed)="addStudent = false" [studentId]="newId"></app-new-student>
+    <div class="btn-area">
+        <a routerLink="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">תפריט ראשי</a>
+        <a class="btn btn-secondary btn-lg active" role="button" aria-pressed="true" (click)="addStudent = true">הוסף תלמידה</a>
+    </div>
+
+</div>

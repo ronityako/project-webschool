@@ -1,0 +1,17 @@
+<div id="sawing_prod" class="center">
+    <h1 class="animated fadeInRight moving_header">מוצרי סדקית</h1>
+    
+    <section class="flex">
+        <a *ngFor="let c of categories" [routerLink]="['/products' , c.id]" class="category">
+            <div>
+                <img [src]="'http://localhost:3000/' + c.picture"/>
+                <div class="category_name">
+                    <h3>{{c.name}}</h3>
+                </div>
+            </div>
+        </a>
+    </section>
+    <div class="btn-area">
+        <a routerLink="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">תפריט ראשי</a>
+    </div>
+</div>

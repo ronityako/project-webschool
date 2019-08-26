@@ -1,0 +1,19 @@
+#color{
+    width: 20px;
+    height: 15px;
+    border: 1px black solid;
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+#colorsList{
+    background-color: white;
+    border: 1px black solid;
+    text-align: right;
+    width: 150px;
+    margin: 10px;
+    position: absolute;
+    left: -75px;
+    bottom: 25px;
+    z-index: 2;
+}

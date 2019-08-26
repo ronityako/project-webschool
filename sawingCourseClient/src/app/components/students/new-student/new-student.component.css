@@ -1,0 +1,120 @@
+#student{
+    height: 500px;
+    width: 400px;
+    background-color: #bedce7;
+    border: 1px black solid;
+    border-radius: 5px;
+    position: absolute;
+    left: 350px;
+    top: 100px;
+    /* position: relative;*/
+}
+#moreDetails span{
+    margin: 10px;
+}
+
+#fullName{
+    display: inline-block;
+    padding: 10px;
+    width: 398px;
+}
+#xButton{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    cursor: context-menu;
+}
+#phones, #moreDetails, table{
+    width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+#fullName, #phones, #moreDetails, #tblArea{
+    border-bottom: 1px #b7c3c3 solid;
+}
+#phones, #moreDetails{
+    padding-bottom: 10px;
+}
+#tblArea{
+    padding-bottom: 10px;
+    height: 200px;
+    position: relative;
+}
+ .btn-pay{
+    position: absolute;
+    /* bottom: 20px;
+    left: 20px;
+    position: absolute; */
+    bottom: 10px;
+    left: 150px;
+}
+#buttons{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+#phones input{
+    width: 100px;
+}
+#phones label{
+    display: block;
+}
+#school{
+    width: 100px;
+}
+#cl{
+    width: 40px;
+}
+label{
+    margin: 0 2px;
+}
+#phones input, #school, #cl, select{
+    background-color: #eef6f9;
+}
+#name{
+    margin: 10px;
+    font-size: 40px;
+    width: 300px;
+    text-align: center;
+    background-color: #eef6f9;
+    height: 55px;
+}
+#startingDate{
+    width: 70px;
+    background-color: #eef6f9;
+}
+.error{
+    font-size: 12px;
+    color: red;
+    padding: 10px;
+    display: block;
+}
+#phones label, #phones input{
+    display: inline-block;
+}
+
+table{
+    background-color: #46484a;
+    opacity: 0.6;
+    margin-top: 0;
+}
+
+tr{
+    color: #eef6f9;
+}
+
+tr:nth-child(even) {background-color: #636569;}
+
+th{
+    color: #0062cc;
+}
+p{
+    margin-bottom: 0;
+}
