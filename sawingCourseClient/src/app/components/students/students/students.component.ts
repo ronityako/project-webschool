@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentsComponent implements OnInit {
 
+  newStudent;
+
   addStudent = false;
 
   newId;
+
+  closeNewStudent(newStudent){
+    this.addStudent = false;
+    if(newStudent){
+      this.newId++;
+      this.newStudent = newStudent;
+    }
+  }
 
   constructor() { }
 

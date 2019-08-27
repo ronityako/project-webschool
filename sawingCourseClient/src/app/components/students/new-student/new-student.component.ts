@@ -32,15 +32,16 @@ export class NewStudentComponent implements OnInit {
 
   submitForm(valid){
     console.log(this.newStudent.startDate);
+    this.newStudent.id = this.studentId;
     if(valid){
-      this.dalSrv.postNewToDB('http://localhost:3000/students', this.newStudent).subscribe(data=>console.log(data));
-      this.studentClosed.emit();
+      this.dalSrv.postNewToDB('http://localhost:3000/students', this.newStudent).subscribe(data=>this.studentClosed.emit(data));
     }
   }
 
   constructor( private dalSrv:DALService ) { }
 
   ngOnInit() {
+    console.log(this.studentId);
   }
 
 }

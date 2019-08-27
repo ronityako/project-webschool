@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnChanges, Input } from '@angular/core';
 import { DALService } from '../../../services/dal.service';
 
 @Component({
@@ -6,12 +6,13 @@ import { DALService } from '../../../services/dal.service';
   templateUrl: './students-table.component.html',
   styleUrls: ['./students-table.component.css']
 })
-export class StudentsTableComponent implements OnInit {
+export class StudentsTableComponent implements OnInit, OnChanges {
 
   students:any[] = [];
   studentsInTable:any[] = [];
   currentStudents = 1;
   @Output() newId = new EventEmitter();
+  @Input() newStudent:any;
 
   chosen:number = 0;
 
@@ -71,13 +72,7 @@ export class StudentsTableComponent implements OnInit {
     else if(Object.entries(update).length == 0){ // empty object => delete
       let index = this.students.map( x => {return x.id} ).indexOf(this.chosen);
       this.students.splice(index, 1);
-      let length = 8;
-      if(this.students.length < 8){
-        length = this.students.length;
-      }
-      for(let i = 0; i < length; i++){
-        this.studentsInTable[i] = this.students[i];
-      }
+      this.refreshTable();
     }
     else if(update){ // updated object
       console.log('in update');
@@ -87,32 +82,52 @@ export class StudentsTableComponent implements OnInit {
       let index = this.students.map( x => {return x.id} ).indexOf(this.chosen);
       this.students[index] = update;
       console.log(this.students[index]);
-      for(let i = 0; i < 8; i++){
-          this.studentsInTable[i] = this.students[i];
-      }
+      this.refreshTable();
       console.log(this.students);
     // });
     }
     this.chosen = 0;
   }
+
+  refreshTable(){
+    let length = 8;
+      if(this.students.length < 8){
+        length = this.students.length;
+      }
+      for(let i = 0; i < length; i++){
+        this.studentsInTable[i] = this.students[i];
+      }
+  }
+
   constructor( private dalSrv:DALService ) { }
 
+  ngOnChanges(){
+    console.log('ngOnChanges ');
+    console.log(this.newStudent);
+    this.students.push(this.newStudent);
+    this.refreshTable();
+  }
+
   ngOnInit() {
+    console.log('ngOnInit');
     this.dalSrv.getFromDB('http://localhost:3000/students').subscribe(data => {
       this.students = data;
       console.log(this.students);
-      // let newId; 
-      // if(this.students.length > 0)
-      //   newId = this.students[length - 1].id + 1;
-      // else
-      //   newId = 1;
-      // this.newId.emit(newId);
+      let newId; 
+      if(this.students.length > 0)
+        newId = this.students[this.students.length - 1].id + 1;
+      else
+        newId = 1;
+      console.log(`newId = ${newId}`);
+      this.newId.emit(newId);
       var i = 0;
-      while(this.students[i] && i < 8){
-        console.log(`in while, i = ${i}`)
-        this.studentsInTable[i] = this.students[i];
-        i++;
-      }
+      // while(this.students[i] && i < 8){
+      //   console.log(`in while, i = ${i}`)
+      //   this.studentsInTable[i] = this.students[i];
+      //   i++;
+      // }
+
+      this.refreshTable();
 
       // for(let i = 0; i < 8; i++){
       //   this.studentsInTable[i] = this.students[i];

@@ -39,9 +39,12 @@ router.post('/', function(req, res, next){
     payments: req.body.payments
   })
 
-  s.save().then(()=>console.log('Student was saved in DB'));
-  next();
-},(req,res,next) => res.status(200))
+  s.save().then(()=>{
+    console.log('Student was saved in DB');
+    res.status(200).send(s);
+  });
+ // next();
+})
 
 // router.put('/', function(req, res, next){
 //   StudentModel.findOneAndUpdate({id:req.body.id}, {$set: req.body}, (err, doc)=>{

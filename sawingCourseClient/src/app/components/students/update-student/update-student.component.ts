@@ -45,7 +45,8 @@ export class UpdateStudentComponent implements OnInit {
       });
   }
   
-  previous(){
+  paymentsPrevious(){
+    console.log(`in previous. currentPayments: ${this.currentPayments}`);
     if(this.currentPayments > 1){
       this.currentPayments--;
       for(let i = 0; i < 4; i++){
@@ -54,7 +55,7 @@ export class UpdateStudentComponent implements OnInit {
     }
   }
 
-  next(){
+  paymentsNext(){
     if(this.currentPayments < Math.ceil(this.chosenStudent.payments.length / 4)){
       var i = 0;
       while(this.chosenStudent.payments[i + this.currentPayments * 4] && i < 4){
