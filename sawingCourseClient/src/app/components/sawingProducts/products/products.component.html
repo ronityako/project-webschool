@@ -2,7 +2,7 @@
     <h1 class="animated fadeInRight moving_header">מוצרי בסיס לתלמידה</h1>
     
     <div id="cart" (click)="showCartProducts = !showCartProducts"><fa name="shopping-cart" size="3x"></fa></div>
-    <app-cart-products *ngIf="showCartProducts" [products]="productsToCart"></app-cart-products>
+    <app-cart-products *ngIf="showCartProducts" [products]="productsToCart" [subTotal]="cartSubTotal"></app-cart-products>
 
     <section class="flex">
         <div *ngFor="let prod of products; let i = index;" class="product">

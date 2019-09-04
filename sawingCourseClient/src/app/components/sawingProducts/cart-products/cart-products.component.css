@@ -1,5 +1,5 @@
 #cartProducts{
-    min-height: 350px;
+    min-height: 560px;;
     width: 500px;
     position: fixed;
     background-color: #ffffff;
@@ -76,4 +76,20 @@ h3{
     width: 16px;
     border: 1px black solid;
     margin: 0 5px;
+}
+#subTotal{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.subTotalLbl{
+    font-size: larger;
+    font-weight: 700;
+}
+
+.subTotalPrm{
+    margin: 10px;
+    color: #0062cc;
+    font-weight: 700;
+    font-size: larger;
 }

@@ -13,8 +13,11 @@
             <div class="color" [ngStyle]="{backgroundColor: prod.color.colorHex}"></div>
             <span>{{prod.color.colorName}}</span>
         </div>
-        <span class="price">{{prod.price}}</span>
-        <span class="xButton"><fa name="window-close"></fa></span>
-        
+        <span class="price">{{prodPrice(prod)}} &#8362;</span>
+        <span class="xButton" (click)="removeProduct(prod)"><fa name="window-close"></fa></span>
+    </div>
+    <div *ngIf="products.length>0" id="subTotal">
+        <span class="subTotalLbl">סה"כ:</span>
+        <span class="subTotalPrm">{{subTotal}} &#8362;</span>
     </div>
 </div>

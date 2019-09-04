@@ -118,3 +118,9 @@ th{
 p{
     margin-bottom: 0;
 }
+.note{
+    position: absolute;
+    color: red;
+    left:10px;
+    bottom: 10px;
+}

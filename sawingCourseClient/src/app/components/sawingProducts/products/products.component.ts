@@ -2,16 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DALService } from '../../../services/dal.service';
 import { ConcatSource } from 'webpack-sources';
+import { CartService } from '../../../services/cart.service';
+import { CartProduct } from '../../../classes/cart-product';
 
-class ProductsToCart{
-  id: number;
-  categoryId: number;
-  name: String;
-  picture: String;
-  price: String;
-  color:any;
-  amount:number;
-}
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -29,8 +23,9 @@ export class ProductsComponent implements OnInit {
   color:any[] = [];
   enableCartBtn:boolean;
   showCartProducts = false;
-  productsToCart:ProductsToCart[] = [];
-  cartIndex:number = 0;
+  productsToCart:CartProduct[] = [];
+  cartSubTotal:number;
+  //cartIndex:number = 0;
   
   updateColor(index){
     console.log(this.showColorsList[index]);
@@ -46,10 +41,10 @@ export class ProductsComponent implements OnInit {
 
   addToCart(product, i){
     console.log(i);
-    console.log(this.cartIndex);
-    console.log(this.productsToCart[this.cartIndex]);
+    // console.log(this.cartIndex);
+    // console.log(this.productsToCart[this.cartIndex]);
     console.log(product);
-    let currentProduct:ProductsToCart = new ProductsToCart();
+    let currentProduct:CartProduct = new CartProduct();
     currentProduct.id = product.id;
     currentProduct.categoryId = product.categoryId;
     currentProduct.name = product.name;
@@ -57,12 +52,20 @@ export class ProductsComponent implements OnInit {
     currentProduct.color = this.color[i];
     currentProduct.amount = 1;
     currentProduct.price = product.price;
-    this.productsToCart.push(currentProduct);
-    this.cartIndex++;
+    this.cartSrv.addProduct(currentProduct);
+    this.productsToCart = this.cartSrv.getProducts();
+    //this.productsToCart.push(currentProduct);
+   // this.cartIndex++;
+   this.cartSubTotal = this.cartSrv.calculateSumToPay();
+   console.log(this.cartSubTotal);
     this.showCartProducts = true;
   }
 
-  constructor( private ar:ActivatedRoute, private dalSrv:DALService) { }
+  // calculateSubTotal(){
+  //   return this.cartSrv.calculateSumToPay();
+  // }
+
+  constructor( private ar:ActivatedRoute, private dalSrv:DALService, private cartSrv:CartService) { }
 
   ngOnInit() {
     this.ar.params.subscribe( params => { 

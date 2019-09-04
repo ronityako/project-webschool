@@ -22,12 +22,15 @@ export class NewStudentComponent implements OnInit {
     startDate: '',
     payments: []
   };
+  COST = 280;
+  diff:number = 0;
 
   addToTable(payment){
     this.paymentWin = false;
     if(payment){
       this.newStudent.payments.push(payment);
     }
+    this.calculateDiff();
   }
 
   submitForm(valid){
@@ -37,6 +40,16 @@ export class NewStudentComponent implements OnInit {
       this.dalSrv.postNewToDB('http://localhost:3000/students', this.newStudent).subscribe(data=>this.studentClosed.emit(data));
     }
   }
+
+  calculateDiff(){
+    this.diff = 0;
+    this.newStudent.payments.forEach(element => {
+      console.log(`diff = ${this.diff}, element = ${element.amount}`);
+      this.diff += (element.amount - this.COST);
+    });
+    console.log(this.diff);
+  }
+  
 
   constructor( private dalSrv:DALService ) { }
 

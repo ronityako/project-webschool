@@ -13,6 +13,7 @@ export class StudentsTableComponent implements OnInit, OnChanges {
   currentStudents = 1;
   @Output() newId = new EventEmitter();
   @Input() newStudent:any;
+  loaded = false;
 
   chosen:number = 0;
 
@@ -72,7 +73,11 @@ export class StudentsTableComponent implements OnInit, OnChanges {
     else if(Object.entries(update).length == 0){ // empty object => delete
       let index = this.students.map( x => {return x.id} ).indexOf(this.chosen);
       this.students.splice(index, 1);
+      console.log('in closeUpdate, delete');
+      console.log(this.students);
+      this.studentsInTable.pop();
       this.refreshTable();
+      console.log(this.studentsInTable);
     }
     else if(update){ // updated object
       console.log('in update');
@@ -97,6 +102,7 @@ export class StudentsTableComponent implements OnInit, OnChanges {
       for(let i = 0; i < length; i++){
         this.studentsInTable[i] = this.students[i];
       }
+      console.log('refresh-table')
   }
 
   constructor( private dalSrv:DALService ) { }
@@ -128,7 +134,7 @@ export class StudentsTableComponent implements OnInit, OnChanges {
       // }
 
       this.refreshTable();
-
+      this.loaded = true;
       // for(let i = 0; i < 8; i++){
       //   this.studentsInTable[i] = this.students[i];
       // }

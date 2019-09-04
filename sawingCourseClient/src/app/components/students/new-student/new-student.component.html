@@ -56,6 +56,8 @@
                 
                 <button type="button" class="btn btn-secondary btn-sm btn-pay" (click)="paymentWin=true">הוסף תשלום</button>
                 <app-add-pay (newPay)="addToTable($event)" *ngIf="paymentWin"></app-add-pay>
+                <span class="note" *ngIf="diff > 0">זכות: {{diff}}</span>
+                <span class="note" *ngIf="diff < 0">חוב: {{diff + diff * -2}}</span>
             </div>
         </div>
         <div id="buttons">
