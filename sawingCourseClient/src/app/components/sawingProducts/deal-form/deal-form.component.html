@@ -1,0 +1,20 @@
+<div id="dealForm">
+    <div id="formHeader">
+        <span class="xButton" (click)="dealClosed.emit(false)"><fa name="window-close"></fa></span>
+        <h1>פרטי רוכש</h1>
+    </div>
+    <input class="customerDetails" type="text" placeholder="* שם מלא">
+    <input class="customerDetails" type="text" placeholder="* טלפון">
+    <input class="customerDetails" type="text" placeholder="* תאריך">
+    <label>אמצעי תשלום: 
+        <select> 
+            <option>מזומן</option>
+            <option>צ'ק</option>
+            <option>כרטיס אשראי</option>
+        </select>
+    </label>
+    <span id="subTotal">סה"כ לתשלום: <span id="subNum">{{subTotal}} &#8362;</span></span>
+    <div id="buttons">
+        <button type="button" class="btn btn-secondary btn-sm" (click)="dealClosed.emit(true)">שלם</button>
+    </div>
+</div>

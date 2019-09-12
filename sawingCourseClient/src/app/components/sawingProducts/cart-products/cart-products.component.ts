@@ -10,12 +10,12 @@ import { CartProduct } from '../../../classes/cart-product';
 export class CartProductsComponent implements OnInit {
   @Input() products:CartProduct[];
   @Input() subTotal:number;
-  //subTotal:number;
+  dealPopup:boolean = false;
 
   updateSubTotal(){
     this.subTotal = 0;
     this.products.forEach(product => {
-      this.subTotal += parseFloat(product.price)*product.amount;
+      this.subTotal += this.prodPrice(product);
     });
     console.log(this.subTotal);
   }
@@ -36,12 +36,16 @@ export class CartProductsComponent implements OnInit {
     console.log('in removeProduct');
     this.cartSrv.removeProduct(product.id);
     this.products = this.cartSrv.getProducts();
+    this.updateSubTotal();
   }
 
   prodPrice(product){
     return parseFloat(product.price) * product.amount;
   }
 
+  updateDeal(wasDeal){
+    this.dealPopup = false;
+  }
   constructor(private cartSrv:CartService) { }
 
   ngOnInit() {

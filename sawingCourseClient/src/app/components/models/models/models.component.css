@@ -15,3 +15,7 @@
     height: 225px;
     margin-bottom: 30px;
 }
+
+.btn-remove{
+    float: left;
+}

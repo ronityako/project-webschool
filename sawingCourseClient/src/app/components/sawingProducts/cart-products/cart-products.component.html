@@ -20,4 +20,8 @@
         <span class="subTotalLbl">סה"כ:</span>
         <span class="subTotalPrm">{{subTotal}} &#8362;</span>
     </div>
+    <div id="buttons">
+        <button [disabled]="products.length==0" type="button" class="btn btn-secondary btn-sm" (click)="dealPopup=true">בצע עסקה</button>
+    </div>
+    <app-deal-form (dealClosed)="updateDeal($event)" *ngIf="dealPopup" [subTotal]="subTotal"></app-deal-form>
 </div>

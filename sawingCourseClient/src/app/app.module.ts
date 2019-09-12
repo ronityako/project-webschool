@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { MainMenuComponent } from './components/mainMenu/main-menu/main-menu.component';
 import { MenuComponent } from './components/mainMenu/menu/menu.component';
 import { ProductsCategoriesComponent } from './components/sawingProducts/products-categories/products-categories.component';
-import { SawingMachinsComponent } from './components/sawingMachins/sawing-machins/sawing-machins.component';
 import { ModelsComponent } from './components/models/models/models.component';
 import { SawingInstructionsComponent } from './components/sawingInstructions/sawing-instructions/sawing-instructions.component';
 import { StudentsComponent } from './components/students/students/students.component';
@@ -23,6 +22,7 @@ import { AddPayComponent } from './components/students/add-pay/add-pay.component
 import { FormsModule } from '@angular/forms';
 import { NewStudentComponent } from './components/students/new-student/new-student.component';
 import { CartProductsComponent } from './components/sawingProducts/cart-products/cart-products.component';
+import { DealFormComponent } from './components/sawingProducts/deal-form/deal-form.component';
 
 
 @NgModule({
@@ -31,7 +31,6 @@ import { CartProductsComponent } from './components/sawingProducts/cart-products
     MainMenuComponent,
     MenuComponent,
     ProductsCategoriesComponent,
-    SawingMachinsComponent,
     ModelsComponent,
     SawingInstructionsComponent,
     StudentsComponent,
@@ -43,7 +42,8 @@ import { CartProductsComponent } from './components/sawingProducts/cart-products
     ModelComponent,
     AddPayComponent,
     NewStudentComponent,
-    CartProductsComponent
+    CartProductsComponent,
+    DealFormComponent
   ],
   imports: [
     BrowserModule,

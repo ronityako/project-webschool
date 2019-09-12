@@ -3,14 +3,16 @@
 
     <section class="flex">
         <div class="model" *ngFor="let model of models, let i=index"  (mouseover)="showPicture(i)" (mouseleave)="leavePicture()"  >
-            <a href="#" >
-                <img   [src]="'http://localhost:3000/' + model.picture" />
-            </a>
+            <img [src]="'http://localhost:3000/' + model.picture" />
+            <div>
+                <button type="button" class="btn btn-secondary btn-sm btn-remove">הסר מתצוגה</button>
+            </div>
             <app-model *ngIf="showModel[i]"   [picture]="'http://localhost:3000/' + model.picture"></app-model>
         </div>
     </section>
 
     <div class="btn-area">
         <a routerLink="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">תפריט ראשי</a>
+        <button type="button" class="btn btn-secondary btn-lg">הוסף דגם</button>
     </div>
 </div>

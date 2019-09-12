@@ -1,0 +1,49 @@
+#dealForm{
+    height: 350px;
+    width: 300px;
+    position: fixed;
+    background-color: #ffffff;
+    border: 1px black solid;
+    left: 219px;
+    bottom: 40px;
+    z-index: 4;
+    text-align: right;
+}
+#formHeader{
+    background-color: grey;
+    color: white;
+    text-align: center;
+}
+.customerDetails{
+    margin: 5px 10px;
+    width: 275px;
+    height: 40px;
+}
+select{
+    height: 40px;
+}
+label{
+    margin: 5px 10px;
+}
+#subTotal{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border: 2px  #0062cc solid;
+    padding: 10px;
+}
+#subNum{
+    background-color: #c7d7e6;
+    padding: 5px;
+}
+#buttons{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+.xButton{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    /* cursor: context-menu; */
+}
