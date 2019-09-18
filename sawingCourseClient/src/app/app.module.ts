@@ -23,6 +23,9 @@ import { FormsModule } from '@angular/forms';
 import { NewStudentComponent } from './components/students/new-student/new-student.component';
 import { CartProductsComponent } from './components/sawingProducts/cart-products/cart-products.component';
 import { DealFormComponent } from './components/sawingProducts/deal-form/deal-form.component';
+import { DealsComponent } from './components/deals/deals/deals.component';
+import { DealsTableComponent } from './components/deals/deals-table/deals-table.component';
+import { DealProductsComponent } from './components/deals/deal-products/deal-products.component';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import { DealFormComponent } from './components/sawingProducts/deal-form/deal-fo
     AddPayComponent,
     NewStudentComponent,
     CartProductsComponent,
-    DealFormComponent
+    DealFormComponent,
+    DealsComponent,
+    DealsTableComponent,
+    DealProductsComponent
   ],
   imports: [
     BrowserModule,

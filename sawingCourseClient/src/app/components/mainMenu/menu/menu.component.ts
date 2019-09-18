@@ -9,10 +9,11 @@ export class MenuComponent implements OnInit {
 
   li1 = false;
   li2 = false;
-  li3 = false;
+//  li3 = false;
   li4 = false;
-  li5 = false;
-  li6 = false;
+//  li5 = false;
+//  li6 = false;
+  li7 = false;
   
   insertMenuItems(){
     setTimeout(() => {
@@ -21,18 +22,22 @@ export class MenuComponent implements OnInit {
     setTimeout(() => {
       this.li2= true;
     }, 1100);
-    setTimeout(() => {
-      this.li3= true;
-    }, 1200);
+    // setTimeout(() => {
+    //   this.li3= true;
+    // }, 1200);
     setTimeout(() => {
       this.li4= true;
+    }, 1200);
+    // setTimeout(() => {
+    //   this.li5= true;
+    // }, 1400);
+    // setTimeout(() => {
+    //   this.li6= true;
+    // }, 1500);
+    setTimeout(() => {
+      this.li7 = true;
     }, 1300);
-    setTimeout(() => {
-      this.li5= true;
-    }, 1400);
-    setTimeout(() => {
-      this.li6= true;
-    }, 1500);
+    
   }
   
   constructor() { }

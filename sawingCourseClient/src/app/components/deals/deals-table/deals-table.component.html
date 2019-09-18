@@ -1,0 +1,26 @@
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+    <table *ngIf="loaded" class="table table-striped table-dark">
+        <thead>
+            <tr class="tableHeader">
+                <th scope="col">תאריך</th>
+                <th scope="col">שם הקונה</th>
+                <th scope="col">טלפון</th>
+                <th scope="col">אמצעי תשלום</th>
+                <th scope="col">סכום הרכישה</th>
+                <th scope="col">מוצרים</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="tableLine" *ngFor="let deal of deals">
+                <td scope="row">{{deal.date}}</td>
+                <td>{{deal.fullName}}</td>
+                <td>{{deal.phone}}</td>
+                <td>{{deal.paymentMethod}}</td>
+                <td>{{deal.subTotal}}</td>
+                <td id="showProducts" (click)="chosenDealProducts = deal.products">הצג מוצרים</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<app-deal-products [dealProducts]="chosenDealProducts" (productsDealClosed)="chosenDealProducts=null"></app-deal-products>

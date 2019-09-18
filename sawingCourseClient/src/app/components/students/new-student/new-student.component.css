@@ -9,6 +9,7 @@
     top: 100px;
     /* position: relative;*/
 }
+
 #moreDetails span{
     margin: 10px;
 }
@@ -18,12 +19,7 @@
     padding: 10px;
     width: 398px;
 }
-#xButton{
-    position: absolute;
-    top: 0px;
-    right: 10px;
-    cursor: context-menu;
-}
+
 #phones, #moreDetails, table{
     width: 360px;
     margin-left: auto;
@@ -123,4 +119,14 @@ p{
     color: red;
     left:10px;
     bottom: 10px;
+}
+#student-mobile{
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    background-color: #88ad72;
+    color: white;
+}
+#student-mobile h3{
+    margin: 20px;
 }

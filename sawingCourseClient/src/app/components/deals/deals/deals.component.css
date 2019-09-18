@@ -1,14 +1,11 @@
-#students{
+#deals{
     direction: rtl;
     background: url('../../../../assets/general/homepage.jpg') center/100% no-repeat fixed;
     height: 660px;
 }
 
-.btn-secondary{
-    cursor: pointer;
-}
 @media(max-width:480px){
-    #students{
+    #deals{
         background-size: cover;
         background-position: center;
         background-attachment: fixed;

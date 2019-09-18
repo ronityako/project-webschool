@@ -10,7 +10,10 @@ export class NewStudentComponent implements OnInit {
 
   @Output() studentClosed = new EventEmitter();
   @Input() studentId;
-  paymentWin = false;
+  @Input() showPopup:boolean;
+
+  isMobile:boolean = false;
+  paymentWin:boolean = false;
   newStudent:any = {
     id: '', 
     fullName: '',
@@ -55,6 +58,11 @@ export class NewStudentComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.studentId);
+    if(window.screen.width <=480 ){
+      console.log('mobile');
+      this.isMobile = true;
+
+    }
   }
 
 }

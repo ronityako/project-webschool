@@ -1,3 +1,5 @@
+import { Color } from '../classes/color';
+
 export class CartProduct {
 
   id: number;
@@ -5,6 +7,6 @@ export class CartProduct {
   name: string;
   picture: string;
   price: string;
-  color:any;
+  color:Color;
   amount:number;
 }

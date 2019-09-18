@@ -14,6 +14,7 @@ export class StudentsTableComponent implements OnInit, OnChanges {
   @Output() newId = new EventEmitter();
   @Input() newStudent:any;
   loaded = false;
+  showPopup: boolean = false;
 
   chosen:number = 0;
 
@@ -40,6 +41,8 @@ export class StudentsTableComponent implements OnInit, OnChanges {
     this.chosenStudent.group = student.group;
     this.chosenStudent.startDate = student.startDate;
     this.chosenStudent.payments = student.payments;
+
+    this.showPopup = true;
   }
 
   previous(){
@@ -69,6 +72,7 @@ export class StudentsTableComponent implements OnInit, OnChanges {
   closeUpdate(update:any){
     if(!update){
       this.chosen = 0;
+      this.showPopup = false;
     }
     else if(Object.entries(update).length == 0){ // empty object => delete
       let index = this.students.map( x => {return x.id} ).indexOf(this.chosen);
@@ -92,6 +96,7 @@ export class StudentsTableComponent implements OnInit, OnChanges {
     // });
     }
     this.chosen = 0;
+    this.showPopup = false;
   }
 
   refreshTable(){

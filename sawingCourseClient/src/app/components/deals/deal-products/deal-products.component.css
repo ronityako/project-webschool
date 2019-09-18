@@ -1,0 +1,33 @@
+#dealProducts{
+    height: 500px;
+    width: 362px;
+    background-color: #bedce7;
+    border: 1px black solid;
+    border-radius: 5px;
+    position: absolute;
+    left: 350px;
+    top: 100px;
+    /* position: relative;*/
+}
+.my-custom-scrollbar {
+    position: relative;
+    height: 460px;
+    overflow: auto;
+    top: 30px;
+}
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+.tableHeader{
+    color: #0062cc;
+}
+table{
+    background-color: #46484a;
+    opacity: 0.6;
+    margin-top: 0;
+}
+#closeButton fa{
+    float: right;
+    margin-right: 10px;
+}

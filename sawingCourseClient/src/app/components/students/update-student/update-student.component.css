@@ -18,12 +18,7 @@
     padding: 20px 39px;
     width: 398px;
 }
-#xButton{
-    position: absolute;
-    top: 0px;
-    right: 10px;
-    cursor: context-menu;
-}
+
 #phones, #moreDetails, table{
     width: 360px;
     margin-left: auto;
@@ -34,6 +29,9 @@ table{
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
+    background-color: #46484a;
+    opacity: 0.6;
+    margin-top: 0;
 }
 
 #fullName, #phones, #moreDetails, #tblArea{
@@ -98,11 +96,6 @@ label{
 #phones label, #phones input{
     display: inline-block;
 }
-table{
-    background-color: #46484a;
-    opacity: 0.6;
-    margin-top: 0;
-}
 
 tr{
     color: #eef6f9;
@@ -130,4 +123,15 @@ p{
     color: red;
     left:10px;
     bottom: 10px;
+}
+
+#student-mobile{
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    background-color: #88ad72;
+    color: white;
+}
+#student-mobile h3{
+    margin: 20px;
 }

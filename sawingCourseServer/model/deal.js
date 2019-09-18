@@ -13,6 +13,7 @@ const Product = new Schema({
 const DealSchema = new Schema({
     fullName: String,
     phone: String,
+    date: String,
     paymentMethod: String,
     products: [{
         type: Product

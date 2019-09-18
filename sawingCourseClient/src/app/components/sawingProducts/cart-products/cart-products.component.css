@@ -56,11 +56,6 @@ h3{
     left: 20px;
 }
 
-.xButton{
-    position: absolute;
-    left: 0;
-    top: 10px;
-}
 .name{
     position: absolute;
 }
@@ -97,4 +92,10 @@ h3{
     position: absolute;
     bottom: 20px;
     left: 20px;
+}
+.cartXButton{
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    cursor: context-menu;
 }

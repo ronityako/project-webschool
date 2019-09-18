@@ -4,6 +4,7 @@ import { DALService } from '../../../services/dal.service';
 import { ConcatSource } from 'webpack-sources';
 import { CartService } from '../../../services/cart.service';
 import { CartProduct } from '../../../classes/cart-product';
+import { Color } from '../../../classes/color';
 
 
 @Component({
@@ -15,12 +16,11 @@ import { CartProduct } from '../../../classes/cart-product';
 
 
 export class ProductsComponent implements OnInit {
-
   
   products:any[] = [];
   showColorsList = {};
   showColor = {};
-  color:any[] = [];
+  color:Color[] = [];
   enableCartBtn:boolean;
   showCartProducts = false;
   productsToCart:CartProduct[] = [];

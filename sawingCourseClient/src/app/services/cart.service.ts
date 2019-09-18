@@ -38,5 +38,8 @@ export class CartService {
     console.log(sum);
     return sum;
   }
+  emptyCart(){
+    this.cartProducts = [];
+  }
   constructor() { }
 }

@@ -10,12 +10,14 @@ export class UpdateStudentComponent implements OnInit {
 
   @Input() chosenStudent:any;
   @Output() studentClosed = new EventEmitter();
+  @Input() showPopup:boolean;
   paymentWin = false;
   paymentsInTable:any[] = [];
   currentPayments = 1;
   note:String;
   COST = 280;
   diff:number = 0;
+  isMobile:boolean = false;
 
   submitForm(valid : boolean)
   {
@@ -89,6 +91,12 @@ export class UpdateStudentComponent implements OnInit {
       i++;
     }
     this.calculateDiff();
+    
+    if(window.screen.width < 480){
+      console.log('mobile');
+      this.isMobile = true;
+    }
   }
+  
 
 }

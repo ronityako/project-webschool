@@ -1,0 +1,23 @@
+<div id="dealProducts" *ngIf="dealProducts!=null">
+    <div id="closeButton" (click)="productsDealClosed.emit()"><fa name="window-close"></fa></div>
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr class="tableHeader">
+                    <th scope="col">שם המוצר</th>
+                    <th scope="col">מחיר</th>
+                    <th scope="col">כמות</th>
+                    <th scope="col">מספר זיהוי צבע</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="tableLine" *ngFor="let product of dealProducts">
+                    <td scope="row">{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.amount}}</td>
+                    <td>{{product.colorId}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
