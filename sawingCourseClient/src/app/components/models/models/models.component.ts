@@ -11,6 +11,7 @@ export class ModelsComponent implements OnInit {
   models:any[] = [];
   showModel = {};
   image;
+  newModel:boolean = false;
   leavePicture(){
     for( var model in this.showModel ){
       this.showModel[model] = false;

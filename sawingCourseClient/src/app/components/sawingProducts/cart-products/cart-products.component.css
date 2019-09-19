@@ -1,5 +1,5 @@
 #cartProducts{
-    min-height: 560px;;
+    height: 500px;;
     width: 500px;
     position: fixed;
     background-color: #ffffff;
@@ -8,6 +8,7 @@
     top: 20px;
     z-index: 3;
     text-align: center;
+    overflow: auto;
 
 }
 h3{
@@ -73,9 +74,8 @@ h3{
     margin: 0 5px;
 }
 #subTotal{
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
+    float: right;
+    margin: 14px;
 }
 .subTotalLbl{
     font-size: larger;
@@ -89,13 +89,23 @@ h3{
     font-size: larger;
 }
 #buttons{
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
+    float: left;
+    margin: 14px;
 }
 .cartXButton{
     position: absolute;
     top: 0px;
     left: 10px;
     cursor: context-menu;
+}
+#cartFooter{
+    position: fixed;
+    bottom: 0;
+    width: 500px;
+    height: 60px;
+    left: 80px;
+    background-color: #e8dddd;
+    top: 519px;
+    border: 1px black solid;
+
 }

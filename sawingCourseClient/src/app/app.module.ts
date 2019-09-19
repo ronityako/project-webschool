@@ -26,6 +26,7 @@ import { DealFormComponent } from './components/sawingProducts/deal-form/deal-fo
 import { DealsComponent } from './components/deals/deals/deals.component';
 import { DealsTableComponent } from './components/deals/deals-table/deals-table.component';
 import { DealProductsComponent } from './components/deals/deal-products/deal-products.component';
+import { NewModelFormComponent } from './components/models/new-model-form/new-model-form.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { DealProductsComponent } from './components/deals/deal-products/deal-pro
     DealFormComponent,
     DealsComponent,
     DealsTableComponent,
-    DealProductsComponent
+    DealProductsComponent,
+    NewModelFormComponent
   ],
   imports: [
     BrowserModule,

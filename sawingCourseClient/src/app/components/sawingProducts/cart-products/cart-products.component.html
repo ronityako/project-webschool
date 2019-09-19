@@ -16,6 +16,10 @@
         <span class="price">{{prodPrice(prod)}} &#8362;</span>
         <span class="cartXButton" (click)="removeProduct(prod)"><fa name="window-close"></fa></span>
     </div>
+    
+    <app-deal-form (dealClosed)="updateDeal($event)" *ngIf="dealPopup" [subTotal]="subTotal"></app-deal-form>
+</div>
+<div id="cartFooter">
     <div *ngIf="products.length>0" id="subTotal">
         <span class="subTotalLbl">סה"כ:</span>
         <span class="subTotalPrm">{{subTotal}} &#8362;</span>
@@ -23,5 +27,4 @@
     <div id="buttons">
         <button [disabled]="products.length==0" type="button" class="btn btn-secondary btn-sm" (click)="dealPopup=true">בצע עסקה</button>
     </div>
-    <app-deal-form (dealClosed)="updateDeal($event)" *ngIf="dealPopup" [subTotal]="subTotal"></app-deal-form>
 </div>

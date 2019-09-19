@@ -49,11 +49,17 @@ router.post('/', function(req, res, next){
          });
          console.log('prod to change');
          console.log(prodToChange);
-         let index = prodToChange.colors.findIndex((item)=>{return item.colorId == prod.colorId});
-         console.log(`index: ${index} prod to change amount: ${prodToChange.amount[index]}`);
-         prodToChange.amount[index] -= prod.amount;
+         //product with color:
+         if(prod.colorId != undefined){
+            let index = prodToChange.colors.findIndex((item)=>{return item.colorId == prod.colorId});
+            console.log(`index: ${index} prod to change amount: ${prodToChange.amount[index]}`);
+            prodToChange.amount[index] -= prod.amount;
+         }
+         //product with no color:
+         else{
+           prodToChange.amount[0] -= prod.amount;
+         }
          console.log(prodToChange);
-         //also check a case with no color!!!!!!!!!!!!!
          ProductModel.findOneAndUpdate({categoryId:prodToChange.categoryId, id:prodToChange.id}, {$set: prodToChange},{new: true}, (err, doc) => {
            if(err){
              console.log(err);

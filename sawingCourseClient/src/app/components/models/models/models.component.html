@@ -13,6 +13,7 @@
 
     <div class="btn-area">
         <a routerLink="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">תפריט ראשי</a>
-        <button type="button" class="btn btn-secondary btn-lg">הוסף דגם</button>
+        <button type="button" class="btn btn-secondary btn-lg" (click)="newModel=true">הוסף דגם</button>
     </div>
+    <app-new-model-form [newModel]="newModel"></app-new-model-form>
 </div>
