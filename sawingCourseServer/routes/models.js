@@ -22,20 +22,21 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res, next){
 
   console.log('in models post');
-  var newpath;
-  var form = new formidable.IncomingForm();
-  form.parse(req, function (err, fields, files) {
-    console.log(files)
-    var oldpath = files.filetoupload.path;
-    console.log(oldpath)
-    newpath = __dirname + `/../public/images/models/${files.filetoupload.name}`;
-    fs.rename(oldpath, newpath, function (err) {
-      if (err) throw err;
-      else{
-          console.log(newpath)
-      }
-    })
-  })
+  // var newpath;
+  // var form = new formidable.IncomingForm();
+  // form.parse(req, function (err, fields, files) {
+  //   console.log(files)
+  //   var oldpath = files.filetoupload.path;
+  //   console.log(oldpath)
+  //   newpath = __dirname + `/../public/images/models/${files.filetoupload.name}`;
+  //   fs.rename(oldpath, newpath, function (err) {
+  //     if (err) throw err;
+  //     else{
+  //         console.log(newpath)
+  //     }
+  //   })
+  // })
+ let newpath = req.body.picture;
 
   var s = new ModelModel({
     picture: newpath

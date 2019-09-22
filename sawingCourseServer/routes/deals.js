@@ -65,7 +65,7 @@ router.post('/', function(req, res, next){
              console.log(err);
            }
            else{
-             res.status(200).send(doc);
+             //res.status(200).send(doc);
              console.log(`Product amount was updated to: ${doc}`);
            }
          });
@@ -73,7 +73,7 @@ router.post('/', function(req, res, next){
        });
      }
    })
-    // res.status(200).).send(s);
+     res.status(200).send(s);
   });
 })
   
