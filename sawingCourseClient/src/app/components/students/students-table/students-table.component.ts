@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, OnChanges, Input } from '@angular/core';
 import { DALService } from '../../../services/dal.service';
+import { Student } from '../../../classes/student';
 
 @Component({
   selector: 'app-students-table',
@@ -8,17 +9,17 @@ import { DALService } from '../../../services/dal.service';
 })
 export class StudentsTableComponent implements OnInit, OnChanges {
 
-  students:any[] = [];
-  studentsInTable:any[] = [];
+  students:Student[] = [];
+  studentsInTable:Student[] = [];
   currentStudents = 1;
   @Output() newId = new EventEmitter();
-  @Input() newStudent:any;
+  @Input() newStudent:Student;
   loaded = false;
   showPopup: boolean = false;
 
   chosen:number = 0;
 
-  chosenStudent:any = {id:0,
+  chosenStudent:Student = {id:0,
     fullName: '', 
     phone: '',
     mobile: '', 
@@ -32,15 +33,17 @@ export class StudentsTableComponent implements OnInit, OnChanges {
     this.chosen = student.id;
     console.log(`student: ${student.phone}`);
     console.log(`chosenStudent: ${this.chosenStudent}`);
-    this.chosenStudent.id = student.id, 
-    this.chosenStudent.fullName = student.fullName;
-    this.chosenStudent.phone = student.phone;
-    this.chosenStudent.mobile = student.mobile;
-    this.chosenStudent.school = student.school;
-    this.chosenStudent.class = student.class;
-    this.chosenStudent.group = student.group;
-    this.chosenStudent.startDate = student.startDate;
-    this.chosenStudent.payments = student.payments;
+    // this.chosenStudent.id = student.id, 
+    // this.chosenStudent.fullName = student.fullName;
+    // this.chosenStudent.phone = student.phone;
+    // this.chosenStudent.mobile = student.mobile;
+    // this.chosenStudent.school = student.school;
+    // this.chosenStudent.class = student.class;
+    // this.chosenStudent.group = student.group;
+    // this.chosenStudent.startDate = student.startDate;
+    // this.chosenStudent.payments = student.payments;
+
+    this.chosenStudent = Object.assign({}, student);
 
     this.showPopup = true;
   }
@@ -55,6 +58,9 @@ export class StudentsTableComponent implements OnInit, OnChanges {
   }
 
   next(){
+    console.log('in next');
+    console.log(this.currentStudents);
+    console.log(this.students.length);
     if(this.currentStudents < Math.ceil(this.students.length / 8)){
       var i = 0;
       while(this.students[i + this.currentStudents * 8] && i < 8){
@@ -107,6 +113,7 @@ export class StudentsTableComponent implements OnInit, OnChanges {
       for(let i = 0; i < length; i++){
         this.studentsInTable[i] = this.students[i];
       }
+      this.currentStudents = 1;
       console.log('refresh-table')
   }
 

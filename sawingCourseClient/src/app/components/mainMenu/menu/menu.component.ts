@@ -12,8 +12,8 @@ export class MenuComponent implements OnInit {
 //  li3 = false;
   li4 = false;
 //  li5 = false;
-//  li6 = false;
-  li7 = false;
+  li6 = false;
+//  li7 = false;
   
   insertMenuItems(){
     setTimeout(() => {
@@ -35,7 +35,7 @@ export class MenuComponent implements OnInit {
     //   this.li6= true;
     // }, 1500);
     setTimeout(() => {
-      this.li7 = true;
+      this.li6 = true;
     }, 1300);
     
   }

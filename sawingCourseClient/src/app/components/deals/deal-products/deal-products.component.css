@@ -31,3 +31,18 @@ table{
     float: right;
     margin-right: 10px;
 }
+
+@media(max-width:480px){
+    #dealProducts{
+        height: 450px;
+        width: 320px;
+        left: 15px;
+        top: 100px;
+    }
+    .table{
+        font-size: 12px;
+    }
+    .table td{
+        padding: 0px;
+    }
+}

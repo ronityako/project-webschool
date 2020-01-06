@@ -26,7 +26,7 @@ export class ModelComponent implements OnInit {
     if(this.pictureY + 400 >= this.innerHeight ){
       // console.log('hi0');     
       posY = this.innerHeight - 400;
-     }
+    }
     console.log(posY);
     let posX = this.pictureX + 50;
     if(this.pictureX + 50 + 400 >= this.innerWidth ){

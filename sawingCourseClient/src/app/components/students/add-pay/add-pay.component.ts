@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+//import { Payment } from '../../../classes/payment';
 
 @Component({
   selector: 'app-add-pay',
@@ -13,6 +14,8 @@ export class AddPayComponent implements OnInit {
     amount: 0,
     way: ''
   }
+
+ // payment:Payment = new Payment();
 
   newPayment(){
     this.newPay.emit(this.payment);

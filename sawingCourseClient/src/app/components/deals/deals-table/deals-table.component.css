@@ -19,9 +19,9 @@
 
 @media(max-width:480px){
     .table{
-        font-size: 14px;
+        font-size: 12px;
     }
     .table td{
-        padding: 5px;
+        padding: 0px;
     }
 }

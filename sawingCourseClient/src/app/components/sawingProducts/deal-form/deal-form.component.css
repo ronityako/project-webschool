@@ -5,8 +5,8 @@
     background-color: #ffffff;
     border: 1px black solid;
     left: 219px;
-    bottom: 40px;
-    z-index: 4;
+    bottom: 150px;
+    z-index: 7;
     text-align: right;
 }
 #formHeader{

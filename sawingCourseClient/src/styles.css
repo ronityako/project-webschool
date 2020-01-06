@@ -25,11 +25,11 @@ body {
     bottom: 30px;
     left: 30px;
 }
-@media(max-width:480px){
+/* @media(max-width:480px){
     .btn-area{
         left: 60px;
     }
-}
+} */
 .xButton{
     position: absolute;
     top: 0px;

@@ -3,7 +3,8 @@
 
     <app-students-table [newStudent]="newStudent" (newId)="newId = $event"></app-students-table>
 
-    <app-new-student [showPopup]="addStudent" (studentClosed)="closeNewStudent($event)" [studentId]="newId"></app-new-student>
+    <!-- <app-new-student [showPopup]="addStudent" (studentClosed)="closeNewStudent($event)" [studentId]="newId"></app-new-student> -->
+    <app-new-student *ngIf="addStudent" (studentClosed)="closeNewStudent($event)" [studentId]="newId"></app-new-student>
     <div class="btn-area">
         <a routerLink="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">תפריט ראשי</a>
         <a class="btn btn-secondary btn-lg active" role="button" aria-pressed="true" (click)="addStudent = true">הוסף תלמידה</a>

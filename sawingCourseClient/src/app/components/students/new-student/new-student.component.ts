@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { DALService } from '../../../services/dal.service';
+import { Student } from '../../../classes/student';
 
 @Component({
   selector: 'app-new-student',
@@ -14,8 +15,8 @@ export class NewStudentComponent implements OnInit {
 
   isMobile:boolean = false;
   paymentWin:boolean = false;
-  newStudent:any = {
-    id: '', 
+  newStudent:Student = {
+    id: 0, 
     fullName: '',
     phone: '',
     mobile: '',

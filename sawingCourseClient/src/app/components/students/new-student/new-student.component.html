@@ -1,8 +1,9 @@
-<div id="student-mobile" *ngIf="isMobile&&showPopup">
+<!-- <div id="student-mobile" *ngIf="isMobile&&showPopup">
     <span class="xButton" (click)="studentClosed.emit(null)"><fa name="window-close"></fa></span>
     <h3>לא ניתן להוסיף תלמידה במצב סלולר</h3>
-</div>
-<div id="student" *ngIf="!isMobile&&showPopup">
+</div> -->
+<!-- <div id="student" *ngIf="!isMobile&&showPopup"> -->
+    <div id="student">
     <span class="xButton" (click)="studentClosed.emit(null)"><fa name="window-close"></fa></span>
     <form #f="ngForm" (ngSubmit)="submitForm(f.valid)">
         <div id="fullName">

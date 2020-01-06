@@ -107,5 +107,21 @@ h3{
     background-color: #e8dddd;
     top: 519px;
     border: 1px black solid;
+    z-index: 4;
 
+}
+
+@media(max-width:480px){
+    #cartProducts{
+        height: 350px;
+        width: 300px;
+        left: 60px;
+    }
+    #cartFooter{
+        bottom: 0;
+        width: 300px;
+        left: 60px;
+        top: 368px;
+    
+    }
 }

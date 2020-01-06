@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DALService } from '../../../services/dal.service';
+import { Student } from '../../../classes/student';
 
 @Component({
   selector: 'app-update-student',
@@ -8,7 +9,7 @@ import { DALService } from '../../../services/dal.service';
 })
 export class UpdateStudentComponent implements OnInit {
 
-  @Input() chosenStudent:any;
+  @Input() chosenStudent:Student;
   @Output() studentClosed = new EventEmitter();
   @Input() showPopup:boolean;
   paymentWin = false;
@@ -84,12 +85,15 @@ export class UpdateStudentComponent implements OnInit {
   constructor( private dalSrv:DALService) { }
 
   ngOnInit() {
+    console.log('update-student ngOnInit');
+    console.log(this.chosenStudent.payments);
     var i = 0;
     while(this.chosenStudent.payments[i] && i < 4){
       console.log(`in while, i = ${i}`)
       this.paymentsInTable[i] = this.chosenStudent.payments[i];
       i++;
     }
+    console.log(this.paymentsInTable);
     this.calculateDiff();
     
     if(window.screen.width < 480){

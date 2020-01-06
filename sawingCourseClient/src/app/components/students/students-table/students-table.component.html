@@ -24,6 +24,6 @@
 <button type="button" class="arrowBtn" (click)="previous()"><fa name="angle-double-up"></fa></button>
 <button type="button" class="arrowBtn" (click)="next()"><fa name="angle-double-down"></fa></button>
 
-<app-update-student [chosenStudent]="chosenStudent" [showPopup]="showPopup" (studentClosed)="closeUpdate($event)"></app-update-student>
-<!-- <app-update-student [chosenStudent]="chosenStudent" *ngIf="chosen!=0" (studentClosed)="closeUpdate($event)"></app-update-student> -->
+<!-- <app-update-student [chosenStudent]="chosenStudent" [showPopup]="showPopup" (studentClosed)="closeUpdate($event)"></app-update-student> -->
+<app-update-student [chosenStudent]="chosenStudent" *ngIf="chosen!=0" (studentClosed)="closeUpdate($event)"></app-update-student>
 
