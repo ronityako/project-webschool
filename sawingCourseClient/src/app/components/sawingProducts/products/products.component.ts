@@ -26,6 +26,7 @@ export class ProductsComponent implements OnInit {
   productsToCart:CartProduct[] = [];
   cartSubTotal:number;
   //cartIndex:number = 0;
+  categoryName:string;
   
   updateColor(index){
     console.log(this.showColorsList[index]);
@@ -69,10 +70,13 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
     this.ar.params.subscribe( params => { 
-       this.dalSrv.getFromDB(`http://localhost:3000/products/${params.id}`).subscribe(data => {
-         this.products = data;
-         console.log(this.products);
-       });
+      this.categoryName = params.name;
+      console.log("products comp init:");
+      console.log(this.categoryName);
+      this.dalSrv.getFromDB(`http://localhost:3000/products/${params.id}`).subscribe(data => {
+        this.products = data;
+        console.log(this.products);
+      });
        
     })
   }

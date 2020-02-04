@@ -12,22 +12,23 @@ export class ModelsComponent implements OnInit {
   showModel = {};
   image;
   newModel:boolean = false;
-  leavePicture(){
+
+  zeroShowModel(){
     for( var model in this.showModel ){
       this.showModel[model] = false;
     }
+  }
+
+  leavePicture(){
+    this.zeroShowModel();
   }
 
   showPicture(i){
-  if(this.image != i){
-    for( var model in this.showModel ){
-      this.showModel[model] = false;
-    }
-    this.showModel[i] = true;
-    this.image = i;
-  }
-
-    
+    if(this.image != i){
+      this.zeroShowModel();
+      this.showModel[i] = true;
+      this.image = i;
+    }  
   }
 
   constructor(private dalSrv:DALService) { }
@@ -35,6 +36,7 @@ export class ModelsComponent implements OnInit {
   ngOnInit() {
     this.dalSrv.getFromDB('http://localhost:3000/models').subscribe(data => {
       this.models = data;
+      console.log("models component init:")
       console.log(this.models);
     });
   }

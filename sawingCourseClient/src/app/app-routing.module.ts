@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: '', component: MainMenuComponent},
   {path: 'students', component: StudentsComponent },
   {path: 'products-categories', component: ProductsCategoriesComponent },
-  {path: 'products/:id', component: ProductsComponent },
+  {path: 'products/:id/:name', component: ProductsComponent },
   {path: 'models', component: ModelsComponent},
   {path: 'deals', component: DealsComponent}
 ];
