@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Student } from '../../../classes/student';
 
 @Component({
   selector: 'app-students',
@@ -7,14 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentsComponent implements OnInit {
 
-  newStudent;
+  newStudent:Student;
 
-  addStudent = false;
+  addStudent:boolean = false;
 
-  newId;
+  newId:number;
 
   closeNewStudent(newStudent){
-    this.addStudent = false;
+    this.addStudent = false; //close the popup
     if(newStudent){
       this.newId++;
       this.newStudent = newStudent;

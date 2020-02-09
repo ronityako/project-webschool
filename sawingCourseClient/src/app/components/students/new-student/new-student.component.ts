@@ -10,7 +10,7 @@ import { Student } from '../../../classes/student';
 export class NewStudentComponent implements OnInit {
 
   @Output() studentClosed = new EventEmitter();
-  @Input() studentId;
+  @Input() studentId:number;
   @Input() showPopup:boolean;
 
   isMobile:boolean = false;

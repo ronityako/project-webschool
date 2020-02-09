@@ -14,7 +14,7 @@ export class StudentsTableComponent implements OnInit, OnChanges {
   currentStudents = 1;
   @Output() newId = new EventEmitter();
   @Input() newStudent:Student;
-  loaded = false;
+  loaded:boolean = false;
   showPopup: boolean = false;
 
   chosen:number = 0;
