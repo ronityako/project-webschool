@@ -19,7 +19,7 @@
         </label>
         <span id="subTotal">סה"כ לתשלום: <span id="subNum">{{subTotal}} &#8362;</span></span>
         <div id="buttons">
-            <button class="btn btn-secondary btn-sm">שלם</button>
+            <button [disabled]="!f.valid" type="submit" class="btn btn-secondary btn-sm">שלם</button>
         </div>
     </form>
 </div>
